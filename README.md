@@ -16,7 +16,7 @@ CHOC_CRUSH_MENU/ ├── index.html ├── about.html ├── contact.htm
 ## 🚀 Live Demo
 
 Check it out live on GitHub Pages:  
-**[https://nishant1509.github.io/choco_crush_menu](https://nishant1509.github.io/choco_crush_menu)**  
+**[https://nishant1509.github.io/choco-crush-menu](https://nishant1509.github.io/choco-crush-menu)**  
 *(Replace with your actual GitHub username)*
 
 ## 🛠️ Built With
