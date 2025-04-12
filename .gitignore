@@ -1,0 +1,16 @@
+# Ignore OS system files
+.DS_Store
+Thumbs.db
+
+# Node modules (if ever added)
+node_modules/
+
+# VS Code workspace settings
+.vscode/
+
+# Environment files
+.env
+
+# Cache and log files
+*.log
+.cache/
