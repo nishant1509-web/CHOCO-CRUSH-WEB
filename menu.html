@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Menu - Choco Crush</title>
+    <link rel="icon" href="choco_crush\Choco crush_20240823_221519_0000.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="menu-icon" onclick="openNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </a>
+    </nav>
+
+    <!-- Slider Menu -->
+    <div id="slider-menu">
+        <span class="close-btn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Chocolates</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">My Cart</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="menu-header">
+        <h1>CHOCOLATE SELECTION</h1>
+        <p>Browse our delicious range of handcrafted chocolates</p>
+    </div>
+
+    <div class="menu">
+        <div class="img-box">
+            <img src="menu_images\milk chocolate horizontal.jpg" alt="Milk Chocolate">
+            <a href="milk-chocolate.html" class="menu-item" >Milk Chocolate</a>
+        </div>
+        
+        <div class="img-box">
+            <img src="menu_images\white chocolate horizontal.jpg" alt="White Chocolate">
+            <a href="white-chocolate.html" class="menu-item" >White Chocolate</a>
+        </div>
+        
+        <div class="img-box">
+            <img src="menu_images\dark chocolate horizontal.jpg" alt="Dark Chocolate">
+            <a href="dark-chocolate.html" class="menu-item" >Dark Chocolate</a>
+        </div>
+        
+        <div class="img-box">
+            <img src="menu_images\diet based chocolate product horizontal.jpg" alt="Sugarfree Chocolate">
+            <a href="sugarfree-chocolate.html" class="menu-item" >Sugarfree Chocolate</a>
+        </div>
+        
+        <div class="img-box">
+            <img src="menu_images\all flovor chocolate horizontal.jpg" alt="Other Flavours">
+            <a href="other-flavours.html" class="menu-item" >Other Flavours</a>
+        </div>
+        
+        <div class="img-box">
+            <img src="menu_images\gift hampers horizontal make it colorfull.jpg" alt="Hampers">
+            <a href="hampers.html" class="menu-item" >Hampers</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Choco Crush</h3>
+                <p>Handcrafted chocolate delights for every occasion.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Chocolates</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1BNn68QrhG/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_choco.crush_?igsh=ZWQxaXh2OHR2c2ll"><i class="fab fa-instagram"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Choco Crush. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

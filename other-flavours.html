@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Flavour Chocolate - Choco Crush</title>
+    <link rel="icon" href="choco_crush\Choco crush_20240823_221519_0000.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="menu-icon" onclick="openNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </a>
+    </nav>
+
+    <!-- Slider Menu -->
+    <div id="slider-menu">
+        <span class="close-btn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Chocolates</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">My Cart</a>
+    </div>
+
+    <!-- Category Header -->
+    <div class="category-header" style="background-image: url('images/milk-chocolate-header.jpg');">
+        <h1>Other flavour Chocolate</h1>
+        <p>Rich, creamy and smooth chocolate made with the finest dairy</p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="other_img\straberry.jpg" alt="Strawberry">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Strawberry</h3>
+                <p class="product-description">Bursting with fruity freshness, this creamy milk chocolate is infused with juicy strawberry notes — a sweet, romantic treat for your senses.</p>
+                <div class="product-price">Rs.6.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-other-1')">-</button>
+                        <input type="number" id="qty-other-1" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-other-1')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Strawberry', 6.99, parseInt(document.getElementById('qty-other-1').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="other_img\pineapple.jpg" alt="Pineapple Delight">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Pineapple Delight </h3>
+                <p class="product-description">A tropical escape in every bite — smooth milk chocolate with crispy hazelnuts, laced with vibrant pineapple essence. Perfectly balanced and irresistibly refreshing.
+
+                </p>
+                <div class="product-price">Rs.6.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-other-2')">-</button>
+                        <input type="number" id="qty-other-2" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-other-2')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pineapple Delight', 6.99, parseInt(document.getElementById('qty-other-2').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="other_img\orange.jpg" alt="Orange Delight">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Orange Delight</h3>
+                <p class="product-description">Bright, citrusy orange meets velvety chocolate and nutty crunch. A refreshing, zesty take on indulgence that’s both energizing and delicious.</p>
+                <div class="product-price">Rs.6.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-other-3')">-</button>
+                        <input type="number" id="qty-other-3" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-other-3')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Orange Delight', 6.99, parseInt(document.getElementById('qty-other-3').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="other_img\pista.jpg" alt="Pistachio">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Pistachio</h3>
+                <p class="product-description">Nutty meets creamy in this gourmet bar, loaded with crunchy pistachios nestled in silky milk chocolate. A rich, elegant treat for refined palates.</p>
+                <div class="product-price">Rs.10.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-other-4')">-</button>
+                        <input type="number" id="qty-other-4" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-other-4')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Pistachio', 10.99, parseInt(document.getElementById('qty-other-4').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Choco Crush</h3>
+                <p>Handcrafted chocolate delights for every occasion.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Chocolates</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1BNn68QrhG/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_choco.crush_?igsh=ZWQxaXh2OHR2c2ll"><i class="fab fa-instagram"></i></a>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Choco Crush. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

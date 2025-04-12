@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hampers - Choco Crush</title>
+    <link rel="icon" href="choco_crush\Choco crush_20240823_221519_0000.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="menu-icon" onclick="openNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </a>
+    </nav>
+
+    <!-- Slider Menu -->
+    <div id="slider-menu">
+        <span class="close-btn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Chocolates</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">My Cart</a>
+    </div>
+
+    <!-- Category Header -->
+    <div class="category-header" style="background-image: url('images/milk-chocolate-header.jpg');">
+        <h1>Hampers</h1>
+        <p>Rich, creamy and smooth chocolate made with the finest dairy</p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="other_img\hamper1.jpg" alt="Premium Box-15">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Premium Box-15pcs</h3>
+                <p class="product-description">An exquisite assortment of 15 hand-crafted chocolates — beautifully boxed for moments that deserve extra sweetness. A luxurious gift for loved ones or yourself.</p>
+                <div class="product-price">Rs.349.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-box-1')">-</button>
+                        <input type="number" id="qty-box-1" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-box-1')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Premium Box-15', 349.99, parseInt(document.getElementById('qty-box-1').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="other_img\hamper1.jpg" alt="Premium Box-25">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Premium Box-25pcs </h3>
+                <p class="product-description">Unbox indulgence with 25 decadent chocolates, each filled with delightful crunch and flavor. Ideal for celebrations, sharing, or savoring solo.</p>
+                <div class="product-price">Rs.449.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-box-2')">-</button>
+                        <input type="number" id="qty-box-2" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-box-2')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Premium Box-25', 449.99, parseInt(document.getElementById('qty-box-2').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="other_img\bitrhday_pouch.jpg" alt="Birthday pouch">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Birthday pouch</h3>
+                <p class="product-description">Celebrate every birthday in style with this vibrant pouch packed with assorted chocolates. A festive, flavor-packed surprise that’s bound to make anyone smile.
+
+                </p>
+                <div class="product-price">Rs.199.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-box-3')">-</button>
+                        <input type="number" id="qty-box-3" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-box-3')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Birthday pouch', 199.99, parseInt(document.getElementById('qty-box-3').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        
+        
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Choco Crush</h3>
+                <p>Handcrafted chocolate delights for every occasion.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Chocolates</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1BNn68QrhG/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_choco.crush_?igsh=ZWQxaXh2OHR2c2ll"><i class="fab fa-instagram"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Choco Crush. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

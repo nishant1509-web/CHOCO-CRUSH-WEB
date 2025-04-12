@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milk Chocolate - Choco Crush</title>
+    <link rel="icon" href="choco_crush\Choco crush_20240823_221519_0000.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="menu-icon" onclick="openNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </a>
+    </nav>
+
+    <!-- Slider Menu -->
+    <div id="slider-menu">
+        <span class="close-btn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Chocolates</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">My Cart</a>
+    </div>
+
+    <!-- Category Header -->
+    <div class="category-header" style="background-image: url('images/milk-chocolate-header.jpg');">
+        <h1>Milk Chocolate</h1>
+        <p>Rich, creamy and smooth chocolate made with the finest dairy</p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="milk_chocolate+product_img\classic.jpeg" alt="Classic Milk Chocolate">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Classic Milk Chocolate</h3>
+                <p class="product-description">Our classic milk chocolate with a creamy, melt-in-your-mouth texture.</p>
+                <div class="product-price">Rs.6.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-milk-1')">-</button>
+                        <input type="number" id="qty-milk-1" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-milk-1')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Classic Milk Chocolate', 6.99, parseInt(document.getElementById('qty-milk-1').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="milk_chocolate+product_img\hazel.jpeg" alt="Hazelnut Milk Chocolate">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Hazelnut Milk Chocolate</h3>
+                <p class="product-description">Crunchy hazelnuts blended into rich milk chocolate.</p>
+                <div class="product-price">Rs.10.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-milk-2')">-</button>
+                        <input type="number" id="qty-milk-2" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-milk-2')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Hazelnut Milk Chocolate', 10.99, parseInt(document.getElementById('qty-milk-2').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="milk_chocolate+product_img\ra.jpeg" alt="Rosted Almond Milk Chocolate">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Rosted Almond Milk Chocolate</h3>
+                <p class="product-description">Crunchy almonds and smooth chocolate in every bite.</p>
+                <div class="product-price">Rs.6.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-milk-3')">-</button>
+                        <input type="number" id="qty-milk-3" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-milk-3')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Rosted Almond Milk Chocolate', 6.99, parseInt(document.getElementById('qty-milk-3').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="milk_chocolate+product_img\oreo.jpg" alt="Oreo Milk Chocolate">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Oreo Milk Chocolate</h3>
+                <p class="product-description">Soft caramel meets crushed Oreo goodness.
+
+                </p>
+                <div class="product-price">Rs.5.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-milk-4')">-</button>
+                        <input type="number" id="qty-milk-4" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-milk-4')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Oreo Milk Chocolate', 5.99, parseInt(document.getElementById('qty-milk-4').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="milk_chocolate+product_img\faf.jpeg" alt="Fruit and Nut">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Fruit and Nut</h3>
+                <p class="product-description">A rich mix of berries, nuts, and milk chocolate.</p>
+                <div class="product-price">Rs.5.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-milk-5')">-</button>
+                        <input type="number" id="qty-milk-5" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-milk-5')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Fruit and Nut', 5.99, parseInt(document.getElementById('qty-milk-5').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="milk_chocolate+product_img\bounty.jpeg" alt="Bounty">
+            </div>
+            <div class="product-details">
+                <h3 class="product-name">Bounty</h3>
+                <p class="product-description">Delicious coconut filling covered in silky chocolate.</p>
+                <div class="product-price">Rs.5.99</div>
+                <div class="product-actions">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" onclick="decreaseQuantity('qty-milk-6')">-</button>
+                        <input type="number" id="qty-milk-6" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" onclick="increaseQuantity('qty-milk-6')">+</button>
+                    </div>
+                    <button class="add-to-cart-btn" onclick="addToCart('Bounty', 5.99, parseInt(document.getElementById('qty-milk-6').value))">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    <!-- Product 7 -->
+     <div class="product-card">
+        <div class="product-image">
+            <img src="milk_chocolate+product_img\kunafa.jpg" alt="Khunafa">
+        </div>
+        <div class="product-details">
+            <h3 class="product-name">Khunafa</h3>
+            <p class="product-description">An assortment of our finest milk chocolates in one elegant box.</p>
+            <div class="product-price">Rs.12.99</div>
+            <div class="product-actions">
+                <div class="quantity-selector">
+                    <button class="quantity-btn" onclick="decreaseQuantity('qty-milk-6')">-</button>
+                    <input type="number" id="qty-milk-6" class="quantity-input" value="1" min="1">
+                    <button class="quantity-btn" onclick="increaseQuantity('qty-milk-6')">+</button>
+                </div>
+                <button class="add-to-cart-btn" onclick="addToCart('Khunafa', 12.99, parseInt(document.getElementById('qty-milk-6').value))">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Choco Crush</h3>
+                <p>Handcrafted chocolate delights for every occasion.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Chocolates</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1BNn68QrhG/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_choco.crush_?igsh=ZWQxaXh2OHR2c2ll"><i class="fab fa-instagram"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Choco Crush. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

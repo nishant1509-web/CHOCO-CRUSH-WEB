@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="choco_crush\Choco crush_20240823_221519_0000.png" type="image/png">
+    <title>Choco Crush - Delicious Chocolate Treats</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="menu-icon" onclick="openNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </a>
+    </nav>
+
+    <!-- Slider Menu -->
+    <div id="slider-menu">
+        <span class="close-btn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Chocolates</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">My Cart</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="logo">
+            <img src="choco_crush\Choco crush_20240823_221519_0000.png" alt="Choco Crush Logo">
+        </div>
+        <div class="title">CHOCO</div>
+        <div class="subtitle">CRUSH</div>
+        <div class="tagline">Experience the sweetest indulgence</div>
+        <div class="menu-button">
+            <button onclick="openMenu()">Explore Our Chocolates</button>
+        </div>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="featured-section">
+        <h2>Popular Picks</h2>
+        <div class="featured-items">
+            <div class="featured-item">
+                <img src="other_img\bitrhday_pouch.jpg" alt="Birthday pouch">
+                <h3>Birthday pouch</h3>
+               <!--<p>Rich and intense flavor</p>--> 
+                <button class="add-to-cart-btn" onclick="addToCart('Birthday pouch', 199.99)">Add to Cart</button>
+            </div>
+            <div class="featured-item">
+                <img src="other_img\hamper1.jpg" alt="Premium box">
+                <h3>Premium box(15pcs)</h3>
+               <!--<p>Smooth and velvety texture</p>--> 
+                <button class="add-to-cart-btn" onclick="addToCart('Premium box', 349.99)">Add to Cart</button>
+            </div>
+            <div class="featured-item">
+                <img src="milk_chocolate+product_img\faf.jpeg" alt="Fruit and Nut">
+                <h3>Fruit and Nut</h3>
+               <!--<p>Sweet and delicate flavors</p>--> 
+                <button class="add-to-cart-btn" onclick="addToCart('Fruit and Nut', 5.99)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Choco Crush</h3>
+                <p>Handcrafted chocolate delights for every occasion.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Chocolates</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1BNn68QrhG/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_choco.crush_?igsh=ZWQxaXh2OHR2c2ll"><i class="fab fa-instagram"></i></a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Choco Crush. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
