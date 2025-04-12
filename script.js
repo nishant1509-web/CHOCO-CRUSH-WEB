@@ -1,17 +1,4 @@
-// Navigation Functions
-function openMenu() {
-    window.location.href = 'menu.html';
-}
-
-function openNav() {
-    document.getElementById("slider-menu").classList.add("open");
-}
-
-function closeNav() {
-    document.getElementById("slider-menu").classList.remove("open");
-}
-
-  // Import the functions you need from the SDKs you need
+// Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
   // TODO: Add SDKs for Firebase products that you want to use
@@ -33,6 +20,19 @@ function closeNav() {
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+// Navigation Functions
+function openMenu() {
+    window.location.href = 'menu.html';
+}
+
+function openNav() {
+    document.getElementById("slider-menu").classList.add("open");
+}
+
+function closeNav() {
+    document.getElementById("slider-menu").classList.remove("open");
+}
+
 // Cart functionality
 let cart = JSON.parse(localStorage.getItem('chocolateCart')) || [];
 updateCartCount();
@@ -227,13 +227,6 @@ function removeItemFromPage(index) {
    renderCartItems();
 }
 
-
-
-function storeOrder(orderDetails) {
-    const orderRef = ref(db, 'orders');
-    const newOrderRef = push(orderRef);
-    set(newOrderRef, orderDetails);
-}
 function checkout() {
     const minimumAmount = 400;
     const totalText = document.getElementById("cart-total").textContent;
