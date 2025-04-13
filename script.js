@@ -212,7 +212,7 @@ function checkout() {
 
     if (totalAmount >= minimumAmount) {
         const orderDetails = {
-            cart: cart,
+            cart: cart, // uses your cart array from localStorage
             total: totalAmount,
             time: new Date().toISOString()
         };
@@ -220,14 +220,15 @@ function checkout() {
         if (typeof storeOrder === "function") {
             storeOrder(orderDetails);
         } else {
-            console.warn("storeOrder function is not defined.");
+            console.warn("storeOrder is not defined. Check Firebase integration.");
         }
 
         alert('Thank you for your order! Your delicious chocolates will be on their way soon.');
-        clearCart();
-        renderCartItems();
+        clearCart();       // your existing function
+        renderCartItems(); // your existing function
     } else {
         alert(`Minimum order amount is Rs. ${minimumAmount}. Please add more items to your cart.`);
     }
 }
+
 
