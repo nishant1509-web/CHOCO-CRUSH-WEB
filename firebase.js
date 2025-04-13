@@ -75,3 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         location.reload();
     }
 });
+document.getElementById("close-user-modal").onclick = function () {
+    document.getElementById("user-details-modal").style.display = "none";
+};
+
