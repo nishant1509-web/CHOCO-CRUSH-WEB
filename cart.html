@@ -1,153 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopping Cart - Choco Crush</title>
-  <link rel="icon" href="choco_crush/Choco crush_20240823_221519_0000.png" type="image/png">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="cart.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    /* Improved Modal Styling */
-    #user-details-modal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    #user-details-modal > div {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-    #user-details-modal input,
-    #user-details-modal textarea {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Choco Crush</title>
+    <link rel="icon" href="choco_crush\Choco crush_20240823_221519_0000.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="menu-icon"onclick="openNav()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <a href="cart.html" class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </a>
+    </nav>
+
+    <!-- Slider Menu -->
+    <div id="slider-menu">
+        <span class="close-btn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Chocolates</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">My Cart</a>
+    </div>
+
+    <!-- Cart Content -->
+    <div class="cart-container">
+        <h1>Your Shopping Cart</h1>
+        
+        <div class="cart-header">
+            <div class="cart-header-item">Product</div>
+            <div class="cart-header-quantity">Quantity</div>
+            <div class="cart-header-price">Price</div>
+            <div class="cart-header-remove"></div>
+        </div>
+        
+        <div id="cart-items">
+            <!-- Cart items will be populated by JavaScript -->
+        </div>
+        
+        <div class="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">Rs.0.00</span>
+            </div>
+            <div class="cart-actions">
+                <a href="menu.html" class="continue-shopping">Continue Shopping</a>
+                <button id="checkout-btn" class="checkout-btn">Checkout</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Choco Crush</h3>
+                <p>Handcrafted chocolate delights for every occasion.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Chocolates</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/1BNn68QrhG/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/_choco.crush_?igsh=ZWQxaXh2OHR2c2ll"><i class="fab fa-instagram"></i></a>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Choco Crush. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- User Details Modal -->
+<div id="user-details-modal" style="
+  display: none; position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 9999;">
+  <div style="
+    background: white;
+    padding: 25px 20px;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;">
+    <!-- Close Icon -->
+    <span id="close-user-modal" style="
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #999;">&times;</span>
+
+    <h3 style="text-align:center; margin-bottom: 15px;">Enter Your Details</h3>
+    
+    <input type="text" id="user-name" placeholder="Name" style="
       width: 100%;
       padding: 10px;
       margin-bottom: 12px;
-      border-radius: 6px;
       border: 1px solid #ccc;
-      font-size: 14px;
-    }
-    #user-details-modal button {
+      border-radius: 6px;
+      font-size: 14px;" />
+
+    <input type="text" id="user-phone" placeholder="Phone Number" style="
       width: 100%;
       padding: 10px;
-      background: #8B4513;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    " />
+
+    <textarea id="user-address" placeholder="Address" style="
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      resize: vertical;
+    "></textarea>
+
+    <button id="submit-details-btn" style="
+      width: 100%;
+      padding: 10px;
+      background-color: #6b3e26;
       color: white;
-      font-weight: bold;
       border: none;
       border-radius: 6px;
+      font-size: 16px;
       cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    #user-details-modal button:hover {
-      background: #5c3210;
-    }
-  </style>
-</head>
-<body>
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="menu-icon" onclick="openNav()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <a href="cart.html" class="cart-icon">
-      <i class="fas fa-shopping-cart"></i>
-      <span id="cart-count">0</span>
-    </a>
-  </nav>
-
-  <!-- Slider Menu -->
-  <div id="slider-menu">
-    <span class="close-btn" onclick="closeNav()">&times;</span>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Chocolates</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-    <a href="cart.html">My Cart</a>
+    ">Submit</button>
   </div>
+</div>
 
-  <!-- Cart Content -->
-  <div class="cart-container">
-    <h1>Your Shopping Cart</h1>
-    <div class="cart-header">
-      <div class="cart-header-item">Product</div>
-      <div class="cart-header-quantity">Quantity</div>
-      <div class="cart-header-price">Price</div>
-      <div class="cart-header-remove"></div>
-    </div>
-    <div id="cart-items"></div>
-    <div class="cart-summary">
-      <div class="cart-total">
-        <span>Total:</span>
-        <span id="cart-total">Rs.0.00</span>
-      </div>
-      <div class="cart-actions">
-        <a href="menu.html" class="continue-shopping">Continue Shopping</a>
-        <button id="checkout-btn" class="checkout-btn">Checkout</button>
-      </div>
-    </div>
-  </div>
 
-  <!-- User Details Modal -->
-  <div id="user-details-modal">
-    <div>
-      <h3>Enter Your Details</h3>
-      <input type="text" id="user-name" placeholder="Name" />
-      <input type="text" id="user-phone" placeholder="Phone Number" />
-      <textarea id="user-address" placeholder="Address"></textarea>
-      <button id="submit-details-btn">Submit</button>
-    </div>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>Choco Crush</h3>
-        <p>Handcrafted chocolate delights for every occasion.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Chocolates</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Connect With Us</h3>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/share/1BNn68QrhG/"><i class="fab fa-facebook"></i></a>
-          <a href="https://www.instagram.com/_choco.crush_?igsh=ZWQxaXh2OHR2c2ll"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Choco Crush. All rights reserved.</p>
-    </div>
-  </footer>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-storage.js"></script>
+    <script  src="firebase.js" type="module"></script>
+    <script  src="script.js"></script>
 
-  <!-- Firebase + Custom Scripts -->
-  <script type="module" src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/11.6.0/firebase-database.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/11.6.0/firebase-storage.js"></script>
 
-  <script type="module" src="script.js"></script>
-  <script type="module" src="firebase.js"></script>
+    <script type=module src="script.js"></script>
+   
 </body>
 </html>
