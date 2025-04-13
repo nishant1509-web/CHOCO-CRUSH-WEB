@@ -207,3 +207,8 @@ function removeItemFromPage(index) {
    renderCartItems();
 }
 
+
+
+
+
+
