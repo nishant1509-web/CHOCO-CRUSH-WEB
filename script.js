@@ -1,3 +1,5 @@
+
+
 // Navigation Functions
 function openMenu() {
     window.location.href = 'menu.html';
@@ -205,18 +207,3 @@ function removeItemFromPage(index) {
    renderCartItems();
 }
 
-function checkout() {
-    const minimumAmount = 400;
-    const totalText = document.getElementById("cart-total").textContent;
-
-   
-    const totalAmount = parseFloat(totalText.replace("Rs.", " "));
-
-    if (totalAmount >= minimumAmount) {
-        alert('Thank you for your order! Your delicious chocolates will be on their way soon.');
-        clearCart();
-        renderCartItems();
-    } else {
-        alert(`Minimum order amount is Rs. ${minimumAmount}. Please add more items to your cart.`);
-    }
-}
