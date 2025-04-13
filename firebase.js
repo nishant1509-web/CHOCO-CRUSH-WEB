@@ -15,10 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const checkoutBtn = document.getElementById("checkout-btn");
     const submitDetailsBtn = document.getElementById("submit-details-btn");
     const modal = document.getElementById("user-details-modal");
+    const closeModalBtn = document.getElementById("close-user-modal");
 
     // Load cart from localStorage
     let cart = JSON.parse(localStorage.getItem("chocolateCart")) || [];
 
+    // Checkout button logic
     checkoutBtn.addEventListener("click", function () {
         const minimumAmount = 400;
         const totalElement = document.getElementById("cart-total");
@@ -33,11 +35,18 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "flex";
     });
 
+    // Submit button logic
     submitDetailsBtn.addEventListener("click", function () {
         const name = document.getElementById("user-name").value.trim();
         const phone = document.getElementById("user-phone").value.trim();
         const address = document.getElementById("user-address").value.trim();
         const totalAmount = parseFloat(document.getElementById("cart-total").textContent.replace("Rs.", "").trim());
+
+        const minimumAmount = 400;
+        if (totalAmount < minimumAmount) {
+            alert(`Minimum order amount is Rs. ${minimumAmount}. Please add more items to your cart.`);
+            return;
+        }
 
         if (!name || !phone || !address) {
             alert("Please fill out all fields.");
@@ -66,6 +75,11 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     });
 
+    // Close modal on icon click
+    closeModalBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
     function clearCart() {
         cart = [];
         localStorage.setItem("chocolateCart", JSON.stringify(cart));
@@ -75,7 +89,3 @@ document.addEventListener("DOMContentLoaded", function () {
         location.reload();
     }
 });
-document.getElementById("close-user-modal").onclick = function () {
-    document.getElementById("user-details-modal").style.display = "none";
-};
-
